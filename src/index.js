@@ -15,6 +15,11 @@ app.get('/', async () => {
     }
 })
 
+const productRoutes = require('./routes/product.route')
+productRoutes.forEach((route, index) => {
+    app.route(route)
+})
+
 const start = async () => {
     try {
         await app.listen(PORT)

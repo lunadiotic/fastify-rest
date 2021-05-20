@@ -5,7 +5,7 @@ const productsSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    descruption: {
+    description: {
         type: String,
         required: true
     },
@@ -13,10 +13,14 @@ const productsSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    variant: {
-        type: Map,
-        of: String
-    }
+    variant: [{
+        title: {
+            type: String
+        },
+        price: {
+            type: String
+        }
+    }]
 })
 
 module.exports = mongoose.model('Product', productsSchema)
