@@ -14,6 +14,7 @@ const productsSchema = new mongoose.Schema({
         required: true
     },
     variant: [{
+        _id: false,
         title: {
             type: String
         },
