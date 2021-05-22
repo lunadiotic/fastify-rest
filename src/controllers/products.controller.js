@@ -9,6 +9,16 @@ exports.index = async (req, reply) => {
     }
 }
 
+exports.show = async (req, reply) => {
+    try {
+        const id = req.params.id
+        const product = await Product.findById(id)
+        return product
+    } catch (err) {
+        throw new Error(err)
+    }
+}
+
 exports.store = async (req, reply) => {
     try {
         const product = new Product(req.body)
