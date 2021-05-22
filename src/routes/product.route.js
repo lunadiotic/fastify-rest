@@ -15,6 +15,10 @@ const routes = [{
     method: 'PUT',
     url: '/api/products/:id',
     handler: product.update
+}, {
+    method: 'DELETE',
+    url: '/api/products/:id',
+    handler: product.delete
 }]
 
 module.exports = routes

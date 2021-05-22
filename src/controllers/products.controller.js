@@ -43,3 +43,13 @@ exports.update = async (req, reply) => {
         throw new Error(err)
     }
 }
+
+exports.delete = async (req, reply) => {
+    try {
+        const id = req.params.id
+        const product = await Product.findByIdAndRemove(id)
+        return product
+    } catch (err) {
+        throw new Error(err)
+    }
+}
