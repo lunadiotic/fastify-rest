@@ -11,6 +11,10 @@ const routes = [{
     method: 'POST',
     url: '/api/products',
     handler: product.store
+}, {
+    method: 'PUT',
+    url: '/api/products/:id',
+    handler: product.update
 }]
 
 module.exports = routes

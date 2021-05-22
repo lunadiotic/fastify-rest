@@ -27,3 +27,19 @@ exports.store = async (req, reply) => {
         throw new Error(err)
     }
 }
+
+exports.update = async (req, reply) => {
+    try {
+        const id = req.params.id
+        const product = req.body
+        const {
+            ...updateData
+        } = product
+        const update = await Product.findByIdAndUpdate(id, updateData, {
+            new: true
+        })
+        return update
+    } catch (err) {
+        throw new Error(err)
+    }
+}
